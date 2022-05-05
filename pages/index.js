@@ -12,7 +12,6 @@ export default function Index() {
   if (!data) return <div>Loading...</div>
 
   // return statement grabs data assigned by above and maps it, passing the data to the Person Component to render.
-  console.log(data)
   return (
     <ul>
       <p>hello i am landing page</p>
