@@ -22,6 +22,8 @@ export default function Index() {
     fetcher
   )
 
+  console.log(data)
+
   if (error) return <div>{error.message}</div>
   if (!data) return <div>Loading...</div>
 
@@ -35,7 +37,7 @@ export default function Index() {
           <States key={i} state={p.stateName} country={data.country}/>
         ))) :
         (data.city.map((p, i) => (
-          <Cities key={i} city={p.cityName} country={data.country}/>
+          <Cities key={i} city={p.cityName} country={data.country} />
         )))
       }
     </div>
