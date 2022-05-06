@@ -22,19 +22,19 @@ export default function Index() {
     fetcher
   )
 
-  console.log(data)
-
   if (error) return <div>{error.message}</div>
   if (!data) return <div>Loading...</div>
 
   const USA = data.state;
+
+  console.log(data)
 
   return (
     <div>
       <h1>{data.country}</h1>
       {USA ?
         (data.state.map((p, i) => (
-          <States key={i} state={p.stateName} country={data.country}/>
+          <States key={i} city={p.stateName} country={data.country}/>
         ))) :
         (data.city.map((p, i) => (
           <Cities key={i} city={p.cityName} country={data.country} />

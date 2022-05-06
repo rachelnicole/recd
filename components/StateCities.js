@@ -1,13 +1,10 @@
 import Link from 'next/link'
 
-export default function States({ country, city }) {
-
-  console.log('states')
+export default function StateCities({ country, city, state }) {
   
   // gets passed in data from pages/index.js, renders as list and sets up api/people/[id] as link for displayed content.
 
   //in Link, /person/[id] is the api route, and person/${person.id} is the template literal
-
 
   return (
     <li>
