@@ -8,8 +8,6 @@ export default function handler({ query: { country, city } }, res) {
   
   let filterCity;
 
-  //let cityState = (USA ? 'hi' :)
-
   if (country === 'United States') {
     filterCity = filtered[0].state.filter((p) => p.stateName === cityName)
   } else {
@@ -21,9 +19,7 @@ export default function handler({ query: { country, city } }, res) {
   if (filtered.length > 0) {
     res.status(200).json(filterCity[0])
   } else {
-    res.status(404).json('error')
+    res.status(404).json({ message: `City ${city} not found.` })
   }
 }
-
-//{ message: `Country ${country} not found.` }
 

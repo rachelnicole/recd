@@ -44,17 +44,11 @@ export default function Index() {
     fetcher
   )
 
-  console.log(error)
-
-  console.log(data)
-
-
   let USA = (query.country == 'United States')
 
 
   if (error) return <div>{error.message}</div>
   if (!data) return <div>Loading...</div>
-
 
   return (
     <div>
@@ -62,7 +56,7 @@ export default function Index() {
       <div>
         {USA ? 
           data.city.map((p, i) => (
-            <StateCities key={i} city={p.cityName} country={data.country} />
+            <StateCities key={i} country={query.country} city={p.cityName} state={data.stateName}  />
           ))
         :
           data.places.map((p, i) => (

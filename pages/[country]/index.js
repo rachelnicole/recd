@@ -3,6 +3,7 @@ import useSWR from 'swr'
 
 import Cities from '../../components/Cities'
 import States from '../../components/States'
+import Header from '../../components/Header'
 
 const fetcher = async (url) => {
   const res = await fetch(url)
@@ -27,10 +28,9 @@ export default function Index() {
 
   const USA = data.state;
 
-  console.log(data)
-
   return (
     <div>
+      <Header/>
       <h1>{data.country}</h1>
       {USA ?
         (data.state.map((p, i) => (

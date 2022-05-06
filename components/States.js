@@ -1,8 +1,6 @@
 import Link from 'next/link'
 
 export default function States({ country, city }) {
-
-  console.log('states')
   
   // gets passed in data from pages/index.js, renders as list and sets up api/people/[id] as link for displayed content.
 
