@@ -30,16 +30,19 @@ export default function Index() {
 
   return (
     <div>
-      <Header/>
-      <h1>{data.country}</h1>
-      {USA ?
-        (data.state.map((p, i) => (
-          <States key={i} city={p.stateName} country={data.country}/>
-        ))) :
-        (data.city.map((p, i) => (
-          <Cities key={i} city={p.cityName} country={data.country} />
-        )))
-      }
+      <Header />
+      <div className="titleWrapper">
+        <h1 className="countryStateTitle">{data.country}</h1>
+      </div>
+      <ul className="cityStateList degular-text-bold-italic">
+        {USA ?
+          (data.state.map((p, i) => (
+            <States key={i} city={p.stateName} country={data.country} />
+          ))) :
+          (data.city.map((p, i) => (
+            <Cities key={i} city={p.cityName} country={data.country} />
+          )))
+        }</ul>
     </div>
   )
 }

@@ -5,33 +5,33 @@ $periwinkle: #5f5aa2;
 $blue: #059af0;
 
 .covik-sans-regular {
-  font-family: covik-sans,sans-serif;
-font-weight: 400;
-font-style: normal;
+  font-family: covik-sans, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .covik-sans-italic {
-  font-family: covik-sans,sans-serif;
+  font-family: covik-sans, sans-serif;
   font-weight: 400;
   font-style: italic;
 }
 
 .covik-sans-bold {
-  font-family: covik-sans,sans-serif;
-font-weight: 700;
-font-style: normal;
+  font-family: covik-sans, sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .covik-sans-bold-italic {
-  font-family: covik-sans,sans-serif;
-font-weight: 700;
-font-style: italic;
+  font-family: covik-sans, sans-serif;
+  font-weight: 700;
+  font-style: italic;
 }
 
 .blazeface {
-  font-family: ohno-blazeface,sans-serif;
-font-weight: 800;
-font-style: italic;
+  font-family: ohno-blazeface, sans-serif;
+  font-weight: 800;
+  font-style: italic;
 }
 
 .degular-regular {
@@ -131,30 +131,86 @@ font-style: italic;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background-color: $mint;
   color: $dark-green;
   font-family: degular-text, sans-serif;
 }
 
+/* Header */
+
 .title {
   color: $dark-green;
   text-decoration: none;
-  font-size: 60px;
+  font-size: 100px;
+  line-height: 100px;
+  padding: 20px;
 }
 
-/* country landing */
+.history-back {
+  background: none;
+  border: none;
+  font-family: ohno-blazeface,sans-serif;
+  font-size: 50px;
+  &:hover {
+    color: white;
+  }
+  vertical-align: text-bottom;
+}
+
+/* country list landing */
 
 .country-list {
   list-style: none;
 
   li {
     display: inline;
-    font-size: 60px;
+    font-size: 80px;
     padding-right: 20px;
 
     a {
       color: $dark-green;
       text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* cities list landing */
+
+.titleWrapper {
+  position: absolute;
+  transform: translateX(180px) rotate(90deg);
+  text-align: left;
+  top: 475px;
+  left: -540px;
+  width: 800px;
+}
+
+.countryStateTitle {
+  display: inline;
+  font-size: 90px;
+}
+
+.cityStateList {
+  list-style: none;
+  margin-left: 50px;
+
+  li {
+    display: inline;
+    font-size: 60px;
+    padding-right: 10px;
+  }
+  a {
+    color: $dark-green;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 
