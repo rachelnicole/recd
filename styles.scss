@@ -1,0 +1,161 @@
+$lavender: #c4b7cb;
+$dark-green: #243e36;
+$mint: #98e2c6;
+$periwinkle: #5f5aa2;
+$blue: #059af0;
+
+.covik-sans-regular {
+  font-family: covik-sans,sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.covik-sans-italic {
+  font-family: covik-sans,sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.covik-sans-bold {
+  font-family: covik-sans,sans-serif;
+font-weight: 700;
+font-style: normal;
+}
+
+.covik-sans-bold-italic {
+  font-family: covik-sans,sans-serif;
+font-weight: 700;
+font-style: italic;
+}
+
+.blazeface {
+  font-family: ohno-blazeface,sans-serif;
+font-weight: 800;
+font-style: italic;
+}
+
+.degular-regular {
+  font-family: degular, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.degular-italic {
+  font-family: degular, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.degular-bold {
+  font-family: degular, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.degular-bold-italic {
+  font-family: degular, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.degular-display-thin {
+  font-family: degular-display, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.degular-display-thin-italic {
+  font-family: degular-display, sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.degular-display-regular {
+  font-family: degular-display, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.degular-display-italic {
+  font-family: degular-display, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.degular-display-bold {
+  font-family: degular-display, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.degular-display-bold-italic {
+  font-family: degular-display, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.degular-display-black {
+  font-family: degular-display, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.degular-display-black-italic {
+  font-family: degular-display, sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.degular-text-regular {
+  font-family: degular-text, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.degular-text-italic {
+  font-family: degular-text, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.degular-text-bold {
+  font-family: degular-text, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.degular-text-bold-italic {
+  font-family: degular-text, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+body {
+  background-color: $mint;
+  color: $dark-green;
+  font-family: degular-text, sans-serif;
+}
+
+.title {
+  color: $dark-green;
+  text-decoration: none;
+  font-size: 60px;
+}
+
+/* country landing */
+
+.country-list {
+  list-style: none;
+
+  li {
+    display: inline;
+    font-size: 60px;
+    padding-right: 20px;
+
+    a {
+      color: $dark-green;
+      text-decoration: none;
+    }
+  }
+
+}

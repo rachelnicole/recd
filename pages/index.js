@@ -2,7 +2,6 @@ import useSWR from 'swr'
 import Country from '../components/Country'
 import Header from "../components/Header"
 
-
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function Index() {
@@ -13,13 +12,13 @@ export default function Index() {
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
+  console.log(data.sort())
+
   // return statement grabs data assigned by above and maps it, passing the data to the Person Component to render.
   return (
     <div>
       <Header />
-      <ul>
-        <p>hello i am landing page</p>
-
+      <ul className="country-list degular-text-bold-italic">
         {data.map((p, i) => (
           <Country key={i} country={p} />
         ))}

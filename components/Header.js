@@ -7,7 +7,7 @@ const Header = () => {
     <button onClick={() => router.back()}>Back</button>
   )}
   <nav>
-    <a href="/">Home</a>
+    <a href="/" className="blazeface title">recd</a>
   </nav>
 </header>
   )
