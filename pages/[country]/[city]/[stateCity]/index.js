@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
-
-import { recs } from '../../../../recs'
+import Header from '../../../../components/Header'
 
 import Places from '../../../../components/Places'
 
@@ -31,8 +30,14 @@ export default function Index() {
 
   return (
     <div>
-      <h1>hi</h1>
-      <div>
+
+      <Header />
+      <div className="titleWrapper">
+        <h1 className="countryStateTitle">{query.stateCity}</h1>
+      </div>
+
+
+      <div className="city-wrapper degular-text-bold-italic">
         {data.places.map((p, i) => (
             <Places key={i} name={p.name} description={p.description} photo={p.photo} address={p.address} category={p.category} tags={p.tags} />
           ))}

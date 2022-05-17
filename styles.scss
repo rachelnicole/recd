@@ -153,6 +153,7 @@ body {
   border: none;
   font-family: ohno-blazeface,sans-serif;
   font-size: 50px;
+  cursor: pointer;
   &:hover {
     color: white;
   }
@@ -196,9 +197,11 @@ body {
   font-size: 90px;
 }
 
-.cityStateList {
+.cityStateList,
+.usa-wrapper {
   list-style: none;
-  margin-left: 50px;
+  margin-left: 100px;
+  padding-left: 0px;
 
   li {
     display: inline;
@@ -214,4 +217,14 @@ body {
     }
   }
 
+}
+
+
+/* city places styling */
+
+.city-wrapper {
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: right;
 }

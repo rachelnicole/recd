@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
 
-import { recs } from '../../../recs'
-
+import Header from '../../../components/Header'
 import Places from '../../../components/Places'
 import StateCities from '../../../components/StateCities'
 
@@ -30,9 +29,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
+
+  const data = { country: 'Hello'}
   
   return {
-    props: { recs }, // will be passed to the page component as props
+    props: { data }, // will be passed to the page component as props
   }
 }
 
@@ -52,8 +53,12 @@ export default function Index() {
 
   return (
     <div>
-      <h1>{USA ? data.stateName : data.cityName}</h1>
-      <div>
+      <Header />
+      <div className="titleWrapper">
+        <h1 className="countryStateTitle">{USA ? data.stateName : data.cityName}</h1>
+      </div>
+      
+      <ul className={USA ? "usa-wrapper degular-text-bold-italic" : "city-wrapper"}>
         {USA ? 
           data.city.map((p, i) => (
             <StateCities key={i} country={query.country} city={p.cityName} state={data.stateName}  />
@@ -63,8 +68,8 @@ export default function Index() {
             <Places key={i} name={p.name} description={p.description} photo={p.photo} address={p.address} category={p.category} tags={p.tags} />
           ))
         }
+        </ul>
       </div>
 
-    </div>
   )
 }
