@@ -190,6 +190,7 @@ body {
   top: 475px;
   left: -540px;
   width: 800px;
+  z-index: 1000;
 }
 
 .countryStateTitle {
@@ -223,8 +224,29 @@ body {
 /* city places styling */
 
 .city-wrapper {
-  width: 80vw;
-  margin: 0 auto;
-  margin-top: 50px;
   text-align: right;
+  margin: 15px;
+}
+
+
+/* map stuff */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#__next {
+  height: 100%;
+}
+#map {
+  height: 100%;
+}
+
+.two-column-map {
+  display: flex;
+}
+
+.map-column {
+  flex: 50%;
 }

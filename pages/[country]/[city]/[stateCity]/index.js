@@ -1,8 +1,10 @@
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
 import Header from '../../../../components/Header'
-
 import Places from '../../../../components/Places'
+import SimpleMap from '../../../../components/SimpleMap'
+
+
 
 const fetcher = async (url) => {
   const res = await fetch(url)
@@ -14,10 +16,9 @@ const fetcher = async (url) => {
   return data
 }
 
-
-
 export default function Index() {
   const { query } = useRouter()
+
 
 
   const { data, error } = useSWR(
@@ -35,12 +36,17 @@ export default function Index() {
       <div className="titleWrapper">
         <h1 className="countryStateTitle">{query.stateCity}</h1>
       </div>
-
-
-      <div className="city-wrapper degular-text-bold-italic">
-        {data.places.map((p, i) => (
-            <Places key={i} name={p.name} description={p.description} photo={p.photo} address={p.address} category={p.category} tags={p.tags} />
-          ))}
+      <div className="two-column-map">
+        <div className="map-column">
+          <SimpleMap />
+        </div>
+        <div className="map-column">
+          <div className="city-wrapper degular-text-bold-italic">
+            {data.places.map((p, i) => (
+              <Places key={i} name={p.name} description={p.description} photo={p.photo} address={p.address} category={p.category} tags={p.tags} />
+            ))}
+          </div>
+        </div>
       </div>
 
     </div>

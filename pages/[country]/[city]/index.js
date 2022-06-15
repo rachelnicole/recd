@@ -4,6 +4,8 @@ import useSWR from 'swr'
 import Header from '../../../components/Header'
 import Places from '../../../components/Places'
 import StateCities from '../../../components/StateCities'
+import SimpleMap from '../../../components/SimpleMap'
+
 
 const fetcher = async (url) => {
   const res = await fetch(url)
@@ -21,8 +23,12 @@ export async function getStaticPaths() {
       // String variant:
       '/United States/Florida',
       // Object variant:
-      { params: { country: 'second-post',
-                  city: 'Florida' } },
+      {
+        params: {
+          country: 'second-post',
+          city: 'Florida'
+        }
+      },
     ],
     fallback: true,
   }
@@ -30,8 +36,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
 
-  const data = { country: 'Hello'}
-  
+  const data = { country: 'Hello' }
+
   return {
     props: { data }, // will be passed to the page component as props
   }
@@ -57,19 +63,27 @@ export default function Index() {
       <div className="titleWrapper">
         <h1 className="countryStateTitle">{USA ? data.stateName : data.cityName}</h1>
       </div>
-      
-      <ul className={USA ? "usa-wrapper degular-text-bold-italic" : "city-wrapper"}>
-        {USA ? 
-          data.city.map((p, i) => (
-            <StateCities key={i} country={query.country} city={p.cityName} state={data.stateName}  />
-          ))
-        :
-          data.places.map((p, i) => (
-            <Places key={i} name={p.name} description={p.description} photo={p.photo} address={p.address} category={p.category} tags={p.tags} />
-          ))
-        }
-        </ul>
+
+      <div className="two-column-map">
+        <div className="map-column">
+          <SimpleMap />
+        </div>
+        <div className="map-column">
+          <ul className={USA ? "usa-wrapper degular-text-bold-italic" : "city-wrapper"}>
+            {USA ?
+              data.city.map((p, i) => (
+                <StateCities key={i} country={query.country} city={p.cityName} state={data.stateName} />
+              ))
+              :
+              data.places.map((p, i) => (
+                <Places key={i} name={p.name} description={p.description} photo={p.photo} address={p.address} category={p.category} tags={p.tags} />
+              ))
+            }
+          </ul>
+        </div>
+
       </div>
+    </div>
 
   )
 }
