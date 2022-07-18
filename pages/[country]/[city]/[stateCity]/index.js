@@ -38,7 +38,7 @@ export default function Index() {
       </div>
       <div className="two-column-map">
         <div className="map-column">
-          <SimpleMap />
+          <SimpleMap mapData={data.places}/>
         </div>
         <div className="map-column">
           <div className="city-wrapper degular-text-bold-italic">

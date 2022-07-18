@@ -13,7 +13,13 @@ class SimpleMap extends Component {
     zoom: 11
   };
 
+  
+
   render() {
+    this.props.mapData.map((p, i) => (
+      console.log(p)
+    ))
+
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '100%', width: '50vw' }}>
@@ -23,11 +29,15 @@ class SimpleMap extends Component {
           defaultZoom={this.props.zoom}
           yesIWantToUseGoogleMapApiInternals
         >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="My Marker"
-          />
+          {this.props.mapData.map((p, i) => (
+                <AnyReactComponent
+                key={i}
+                lat={p.latitude}
+                lng={p.longitude}
+                text={p.name}
+              />
+              ))
+            }
         </GoogleMapReact>
       </div>
     );

@@ -6,7 +6,6 @@ import Places from '../../../components/Places'
 import StateCities from '../../../components/StateCities'
 import SimpleMap from '../../../components/SimpleMap'
 
-
 const fetcher = async (url) => {
   const res = await fetch(url)
   const data = await res.json()
@@ -14,33 +13,8 @@ const fetcher = async (url) => {
   if (res.status !== 200) {
     throw new Error(data.message)
   }
+
   return data
-}
-
-export async function getStaticPaths() {
-  return {
-    paths: [
-      // String variant:
-      '/United States/Florida',
-      // Object variant:
-      {
-        params: {
-          country: 'second-post',
-          city: 'Florida'
-        }
-      },
-    ],
-    fallback: true,
-  }
-}
-
-export async function getStaticProps(context) {
-
-  const data = { country: 'Hello' }
-
-  return {
-    props: { data }, // will be passed to the page component as props
-  }
 }
 
 export default function Index() {
@@ -66,7 +40,12 @@ export default function Index() {
 
       <div className="two-column-map">
         <div className="map-column">
-          <SimpleMap />
+          <SimpleMap mapData={USA ?
+              data.city
+              :
+              data.places
+            }
+            />
         </div>
         <div className="map-column">
           <ul className={USA ? "usa-wrapper degular-text-bold-italic" : "city-wrapper"}>
