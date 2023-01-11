@@ -38,28 +38,28 @@ export default function Index() {
         <h1 className="countryStateTitle">{USA ? data.stateName : data.cityName}</h1>
       </div>
 
+      { USA ?
+      <ul className={"usa-wrapper degular-text-bold-italic"}>
+      {
+        data.city.map((p, i) => (
+          <StateCities key={i} country={query.country} city={p.cityName} state={data.stateName} />
+        ))   
+      }
+    </ul>
+      :
       <div className="two-column-map">
         <div className="map-column fixed-map">
-          { USA ?
-          ''
-          :
           <SimpleMap mapData={USA ?
             data.city
             :
             data.places
           }
           />
-          }
-          
         </div>
         <div className="map-column">
-          <ul className={USA ? "usa-wrapper degular-text-bold-italic" : "city-wrapper"}>
-            {USA ?
-              data.city.map((p, i) => (
-                <StateCities key={i} country={query.country} city={p.cityName} state={data.stateName} />
-              ))
-              :
-              data.places.map((p, i) => (
+          <ul className={"city-wrapper"}>
+            {
+            data.places.map((p, i) => (
                 <Places key={i} name={p.name} description={p.description} photo={p.photo} address={p.address} category={p.category} tags={p.tags} />
               ))
             }
@@ -67,6 +67,7 @@ export default function Index() {
         </div>
 
       </div>
+      }
     </div>
 
   )
