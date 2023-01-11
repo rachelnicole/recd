@@ -111,6 +111,14 @@ export const recs = [
             "description": "Bustling shopping center featuring stores for anime & comics, plus boutiques, gift shops & eateries.",
             "photo": "url.jpg",
             "tags": ["activity", "shopping", "anime"]
+          },
+          {
+            "name": "HEY (Hirose Entertainment Yard) Taito",
+            "category": ["entertainment", "arcade"],
+            "address": "Japan, 〒101-0021 Tokyo, Chiyoda City, Sotokanda, 1 Chome−10−5 １階～４階 廣瀬本社ビル",
+            "description": "Longtime arcade with lots of retro candy cabinets.",
+            "photo": "url.jpg",
+            "tags": ["activity", "arcade", "gaming"]
           }
         ]
       },
@@ -162,9 +170,50 @@ export const recs = [
             "description": "Party venue hung with mirror balls, offering lip-sync karaoke, private singing booths & drag shows.",
             "photo": "url.jpg",
             "tags": ["karaoke", "bar", "lgbtq", "trans"]
+          },
+          {
+            "name": "Boros Foundation",
+            "latitude": "52.5235298",
+            "longitude": "13.3841109",
+            "category": ["activity"],
+            "address": "Reinhardtstraße 20, 10117 Berlin, Germany",
+            "description": "Contemporary art collection in a former bunker, with international artists' work from 1990s onward..",
+            "photo": "url.jpg",
+            "tags": ["art", "gallery"]
           }
         ]
       }
     ]
-  }
+  },
+  {
+    "country": "Canada",
+    "city": [
+      {
+        "cityName": "Toronto",
+        "places": [
+          {
+            "name": "Bar Raval",
+            "latitude": "43.6558235",
+            "longitude": "-79.4121036",
+            "category": ["bar"],
+            "address": "505 College St, Toronto, ON M6J 2J3, Canada",
+            "description": "Spanish pinxtos bar with gorgeous Gaudi-inspired wood carved interior.",
+            "photo": "url.jpg",
+            "tags": ["bar", "food"]
+          },
+          {
+            "name": "The Lakeview",
+            "latitude": "43.6495826",
+            "longitude": "-79.437874",
+            "category": ["food"],
+            "address": "1132 Dundas St W, Toronto, ON M6J 1X2, Canada",
+            "description": "Historic 24/7 (almost) diner & bar.",
+            "photo": "url.jpg",
+            "tags": ["bar", "diner"]
+          }
+        ]
+      }
+    ]
+  },
+  
 ]
