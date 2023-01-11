@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, MarkerClusterer } from '@react-google-maps/api';
 import settings from '../settings'
 
 const containerStyle = {
@@ -7,10 +7,8 @@ const containerStyle = {
   height: '400px'
 };
 
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
+
+
 
 const onLoad = marker => {
   console.log('marker: ', marker)
@@ -19,6 +17,13 @@ const onLoad = marker => {
 
 class SimpleMap extends Component {
   render() {
+    const center = {
+      lat: Number(this.props.mapData[0].lat),
+      lng: Number(this.props.mapData[0].lng)
+    };
+
+    console.log(this.props.mapData[0])
+
     this.props.mapData.map((p, i) => (
       console.log(p)
     ))
@@ -35,14 +40,15 @@ class SimpleMap extends Component {
           
           {this.props.mapData.map((p, i) => {
             const position = {
-              lat: Number(p.latitude),
-              lng: Number(p.longitude)
+              lat: Number(p.lat),
+              lng: Number(p.lng)
             }
 
             return (<Marker
               onLoad={onLoad}
               position={position }
               label={p.name}
+              key={i}
             />)
         })
             }

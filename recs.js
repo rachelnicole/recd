@@ -153,8 +153,8 @@ export const recs = [
         "places": [
           {
             "name": "Liquidrom",
-            "latitude": "52.5012962",
-            "longitude": "13.3791865",
+            "lat": "52.5012962",
+            "lng": "13.3791865",
             "category": ["wellness"],
             "address": "Möckernstraße 10, 10963 Berlin, Germany",
             "description": "Cool spa in building resembling a circus tent, with multiple pools, saunas & underwater music.",
@@ -163,8 +163,8 @@ export const recs = [
           },
           {
             "name": "Monster Ronson's Ichiban Karaoke",
-            "latitude": "52.5052742",
-            "longitude": "13.4439865",
+            "lat": "52.5052742",
+            "lng": "13.4439865",
             "category": ["activity"],
             "address": "Warschauer Str. 34, 10243 Berlin, Germany",
             "description": "Party venue hung with mirror balls, offering lip-sync karaoke, private singing booths & drag shows.",
@@ -173,8 +173,8 @@ export const recs = [
           },
           {
             "name": "Boros Foundation",
-            "latitude": "52.5235298",
-            "longitude": "13.3841109",
+            "lat": "52.5235298",
+            "lng": "13.3841109",
             "category": ["activity"],
             "address": "Reinhardtstraße 20, 10117 Berlin, Germany",
             "description": "Contemporary art collection in a former bunker, with international artists' work from 1990s onward..",
@@ -193,8 +193,8 @@ export const recs = [
         "places": [
           {
             "name": "Bar Raval",
-            "latitude": "43.6558235",
-            "longitude": "-79.4121036",
+            "lat": "43.6558235",
+            "lng": "-79.4121036",
             "category": ["bar"],
             "address": "505 College St, Toronto, ON M6J 2J3, Canada",
             "description": "Spanish pinxtos bar with gorgeous Gaudi-inspired wood carved interior.",
@@ -203,8 +203,8 @@ export const recs = [
           },
           {
             "name": "The Lakeview",
-            "latitude": "43.6495826",
-            "longitude": "-79.437874",
+            "lat": "43.6495826",
+            "lng": "-79.437874",
             "category": ["food"],
             "address": "1132 Dundas St W, Toronto, ON M6J 1X2, Canada",
             "description": "Historic 24/7 (almost) diner & bar.",
