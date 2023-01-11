@@ -40,12 +40,17 @@ export default function Index() {
 
       <div className="two-column-map">
         <div className="map-column fixed-map">
+          { USA ?
+          ''
+          :
           <SimpleMap mapData={USA ?
-              data.city
-              :
-              data.places
-            }
-            />
+            data.city
+            :
+            data.places
+          }
+          />
+          }
+          
         </div>
         <div className="map-column">
           <ul className={USA ? "usa-wrapper degular-text-bold-italic" : "city-wrapper"}>

@@ -23,12 +23,6 @@ class SimpleMap extends Component {
       lng: this.props.mapData[0].lng
     };
 
-    console.log(this.props.mapData[0])
-
-    this.props.mapData.map((p, i) => (
-      console.log(p)
-    ))
-
     return (
       <LoadScript
         googleMapsApiKey={settings.googleMaps.apiKey}
