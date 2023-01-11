@@ -3,8 +3,9 @@ import { GoogleMap, LoadScript, Marker, MarkerClusterer } from '@react-google-ma
 import settings from '../settings'
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: '100%',
+  height: '100%',
+  position: 'fixed'
 };
 
 
@@ -18,8 +19,8 @@ const onLoad = marker => {
 class SimpleMap extends Component {
   render() {
     const center = {
-      lat: Number(this.props.mapData[0].lat),
-      lng: Number(this.props.mapData[0].lng)
+      lat: this.props.mapData[0].lat,
+      lng: this.props.mapData[0].lng
     };
 
     console.log(this.props.mapData[0])
@@ -40,8 +41,8 @@ class SimpleMap extends Component {
           
           {this.props.mapData.map((p, i) => {
             const position = {
-              lat: Number(p.lat),
-              lng: Number(p.lng)
+              lat: p.lat,
+              lng: p.lng
             }
 
             return (<Marker

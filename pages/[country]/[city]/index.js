@@ -39,7 +39,7 @@ export default function Index() {
       </div>
 
       <div className="two-column-map">
-        <div className="map-column">
+        <div className="map-column fixed-map">
           <SimpleMap mapData={USA ?
               data.city
               :
