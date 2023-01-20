@@ -13,7 +13,7 @@ const onLoad = marker => {
 }
 
 
-function SimpleMap({mapData, setActiveMarker}) {
+function SimpleMap({mapData, activeMarker, setActiveMarker}) {
   const center = {
     lat: mapData[0].lat,
     lng: mapData[0].lng

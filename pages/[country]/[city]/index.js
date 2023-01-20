@@ -57,13 +57,14 @@ function Index() {
             :
             data.places
           } setActiveMarker={setActiveMarker}
+          activeMarker={activeMarker}
           />
         </div>
         <div className="map-column">
           <ul className={"city-wrapper"}>
             {
             data.places.map((p, i) => (
-                <Places key={i} name={p.name} description={p.description} photo={p.photo} address={p.address} category={p.category} tags={p.tags} />
+                <Places key={i} name={p.name} description={p.description} photo={p.photo} address={p.address} category={p.category} tags={p.tags} activeMarker={activeMarker} />
               ))
             }
           </ul>
