@@ -13,15 +13,14 @@ const onLoad = marker => {
 }
 
 
-function SimpleMap({mapData}) {
+function SimpleMap({mapData, setActiveMarker}) {
   const center = {
     lat: mapData[0].lat,
     lng: mapData[0].lng
   };
 
-  const markerClicked = e => {
-    this.setState({isActive: e.domEvent.srcElement.title});
-  }
+  
+
 
     return (
       <LoadScript
@@ -41,6 +40,13 @@ function SimpleMap({mapData}) {
               const position = {
                 lat: p.lat,
                 lng: p.lng
+              }
+
+              const markerClicked = e => {
+
+                let mapPoint = e.domEvent.srcElement.title;
+                setActiveMarker(mapPoint) 
+                
               }
 
               return (

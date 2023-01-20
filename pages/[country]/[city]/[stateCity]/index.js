@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
 import Header from '../../../../components/Header'
@@ -18,6 +19,8 @@ const fetcher = async (url) => {
 
 function Index() {
   const { query } = useRouter()
+  const [activeMarker, setActiveMarker] = React.useState(['']);
+
 
 
 
@@ -38,7 +41,7 @@ function Index() {
       </div>
       <div className="two-column-map">
         <div className="map-column fixed-map">
-          <SimpleMap mapData={data.places} />
+          <SimpleMap mapData={data.places} setActiveMarker={setActiveMarker} />
         </div>
         <div className="map-column">
           <div className="city-wrapper degular-text-bold-italic">
