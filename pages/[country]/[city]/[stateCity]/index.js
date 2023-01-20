@@ -29,6 +29,7 @@ export default function Index() {
   if (error) return <div>{error.message}</div>
   if (!data) return <div>Loading...</div>
 
+  
 
   return (
     <div>
@@ -39,7 +40,7 @@ export default function Index() {
       </div>
       <div className="two-column-map">
         <div className="map-column fixed-map">
-          <SimpleMap mapData={data.places}/>
+          <SimpleMap mapData={data.places} />
         </div>
         <div className="map-column">
           <div className="city-wrapper degular-text-bold-italic">

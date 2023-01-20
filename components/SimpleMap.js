@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GoogleMap, LoadScript, Marker, MarkerClusterer } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import settings from '../settings'
 
 const containerStyle = {
@@ -8,20 +8,27 @@ const containerStyle = {
   position: 'fixed'
 };
 
-
-
-
 const onLoad = marker => {
-  console.log('marker: ', marker)
+ // console.log('marker: ', marker)
 }
 
 
 class SimpleMap extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+
   render() {
     const center = {
       lat: this.props.mapData[0].lat,
       lng: this.props.mapData[0].lng
     };
+
+    const markerClicked = e => {
+      this.setState({isActive: e.domEvent.srcElement.title});
+    }
 
     return (
       <LoadScript
@@ -34,19 +41,31 @@ class SimpleMap extends Component {
         >
           
           {this.props.mapData.map((p, i) => {
-            const position = {
-              lat: p.lat,
-              lng: p.lng
-            }
+      
+            // find div whose aria-label matches the marker title, and add the html data attribute for the marker slug.
 
-            return (<Marker
-              onLoad={onLoad}
-              position={position }
-              label={p.name}
-              key={i}
-            />)
-        })
-            }
+
+              const position = {
+                lat: p.lat,
+                lng: p.lng
+              }
+
+              return (
+                <Marker
+                  onLoad={onLoad}
+                  onClick={markerClicked}
+                  position={position}
+                  clickable={true}
+                  title={p.name}
+                  key={i}
+                >
+
+                </Marker>
+              )
+            })
+          }
+
+
           <></>
         </GoogleMap>
       </LoadScript>
