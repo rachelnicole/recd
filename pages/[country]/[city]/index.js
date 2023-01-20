@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import React, { useState } from 'react';
 import useSWR from 'swr'
 
 import Header from '../../../components/Header'
@@ -17,8 +18,10 @@ const fetcher = async (url) => {
   return data
 }
 
-export default function Index() {
-  const { query } = useRouter()
+function Index() {
+  const { query } = useRouter();
+  const [activeMarker, setActiveMarker] = React.useState(['']);
+
 
   const { data, error } = useSWR(
     () => (query.country, query.city) && `/api/${query.country}/${query.city}`,
@@ -53,7 +56,7 @@ export default function Index() {
             data.city
             :
             data.places
-          }
+          } setActiveMarker={setActiveMarker}
           />
         </div>
         <div className="map-column">
@@ -72,3 +75,5 @@ export default function Index() {
 
   )
 }
+
+export default Index;
