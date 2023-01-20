@@ -16,7 +16,7 @@ const fetcher = async (url) => {
   return data
 }
 
-export default function Index() {
+function Index() {
   const { query } = useRouter()
 
 
@@ -28,8 +28,6 @@ export default function Index() {
 
   if (error) return <div>{error.message}</div>
   if (!data) return <div>Loading...</div>
-
-  
 
   return (
     <div>
@@ -54,3 +52,5 @@ export default function Index() {
     </div>
   )
 }
+
+export default Index;

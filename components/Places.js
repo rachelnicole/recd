@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function Places({ name, description, photo, address, category, tags }) {
+function Places({ name, description, photo, address, category, tags }) {
 
   let mapSlug = name;
   
@@ -19,3 +19,5 @@ export default function Places({ name, description, photo, address, category, ta
     </div>
   )
 }
+
+export default Places;

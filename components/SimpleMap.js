@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import settings from '../settings'
 
@@ -13,22 +13,15 @@ const onLoad = marker => {
 }
 
 
-class SimpleMap extends Component {
+function SimpleMap({mapData}) {
+  const center = {
+    lat: mapData[0].lat,
+    lng: mapData[0].lng
+  };
 
-  constructor(props) {
-    super(props);
+  const markerClicked = e => {
+    this.setState({isActive: e.domEvent.srcElement.title});
   }
-
-
-  render() {
-    const center = {
-      lat: this.props.mapData[0].lat,
-      lng: this.props.mapData[0].lng
-    };
-
-    const markerClicked = e => {
-      this.setState({isActive: e.domEvent.srcElement.title});
-    }
 
     return (
       <LoadScript
@@ -40,7 +33,7 @@ class SimpleMap extends Component {
           zoom={10}
         >
           
-          {this.props.mapData.map((p, i) => {
+          {mapData.map((p, i) => {
       
             // find div whose aria-label matches the marker title, and add the html data attribute for the marker slug.
 
@@ -70,7 +63,6 @@ class SimpleMap extends Component {
         </GoogleMap>
       </LoadScript>
     )
-  }
 }
 
 export default SimpleMap;
