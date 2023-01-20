@@ -46,7 +46,7 @@ function Index() {
         <div className="map-column">
           <div className="city-wrapper degular-text-bold-italic">
             {data.places.map((p, i) => (
-              <Places key={i} name={p.name} description={p.description} photo={p.photo} address={p.address} category={p.category} tags={p.tags} />
+              <Places key={i} name={p.name} description={p.description} photo={p.photo} address={p.address} category={p.category} tags={p.tags} activeMarker={activeMarker} />
             ))}
           </div>
         </div>
